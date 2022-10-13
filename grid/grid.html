@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>grid</title>
+<style>
+.grid-container{
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* ㄴ>그리드에 열(칸)을 각각 동일한 비율(fr)로 3개 만들어라 */
+    grid-template-rows: 70px 200px 70px;
+    /* ㄴ>그리드에 행(줄)을 각각 7, 200, 70 크기로 3개 만들어라 */
+    grid-gap: 10px;
+    /* ㄴ>grid-row-gap, grid-column-gap 따로 적용 가능 */
+}
+.grid-item{color: #fff;background: #0169ff;}
+.header{
+    grid-column-start: 1;grid-column-end: 4;
+    /* 경계선 번호 처음(1)부터 끝(-1)까지 영역을 차지함 */
+    grid-row-start: 1;grid-row-end: 2;
+}
+.nav{grid-column: 1 / 2;grid-row: 2 / 3;}/* = grid-column-start: 1;grid-column-end: 2; */
+.main{grid-column: 2 / 3;grid-row: 2 / 3}
+.aside{grid-column: 3 / 4;grid-row: 2 / 3}
+.footer{grid-column: 1 / -1;grid-row: 3 / 4;}
+</style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item header">Header</div>
+        <div class="grid-item nav">Nav</div>
+        <div class="grid-item main">Main Content</div>
+        <div class="grid-item aside">aside</div>
+        <div class="grid-item footer">Footer</div>
+    </div>
+</body>
+</html>
